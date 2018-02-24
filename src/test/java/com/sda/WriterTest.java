@@ -8,7 +8,7 @@ public class WriterTest {
     private Writer writer;
 
     @Before
-    public void init(){
+    public void init() {
         writer = new Writer();
     }
 
@@ -41,11 +41,29 @@ public class WriterTest {
     }
 
     @Test
-    public void SayHelloWithCapitalizedNameSpecified(){
+    public void sayHelloWithCapitalizedNameSpecified() {
         String name = "ANITA";
 
         String result = writer.sayHello(name);
 
         Assert.assertEquals("HELLO, ANITA!", result);
+    }
+
+    @Test
+    public void sayHelloWithOneSpaceName() {
+        String name = " ";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("Hello, my friend!", result);
+    }
+
+    @Test
+    public void sayHelloWithBlankName() {
+        String name = "    ";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("Hello, my friend!", result);
     }
 }

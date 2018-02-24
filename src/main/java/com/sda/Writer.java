@@ -6,12 +6,13 @@ public class Writer {
     public String sayHello(String name) {
         String nameInMessage = name;
         String greeting = "Hello";
-        if ("".equals(nameInMessage) || nameInMessage == null) {
+        if (StringUtils.isBlank(nameInMessage)) {
             nameInMessage = "my friend";
         }
         if (StringUtils.isAllUpperCase(nameInMessage)) {
             greeting = StringUtils.upperCase(greeting);
         }
+
         return greeting + ", " + nameInMessage + "!";
     }
 
