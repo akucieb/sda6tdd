@@ -1,38 +1,51 @@
 package com.sda;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class WriterTest {
+    private Writer writer;
+
+    @Before
+    public void init(){
+        writer = new Writer();
+    }
 
     @Test
-    public void sayHelloTest(){
-        Writer writer = new Writer();
-        //new Writer().var
-
+    public void sayHelloTest() {
         String name = "Szymon";
 
         String result = writer.sayHello(name);
 
-        Assert.assertEquals("Expected hello message is invalid","Hello, Szymon!",result);
+        Assert.assertEquals("Expected hello message is invalid", "Hello, Szymon!", result);
 
     }
+
     @Test
-    public void sayHelloWithNoNameSpecified(){
-        Writer writer = new Writer();
+    public void sayHelloWithNoNameSpecified() {
         String name = "";
 
         String result = writer.sayHello("");
 
-        Assert.assertEquals("Message for empty name should be different","Hello, my friend!", result);
+        Assert.assertEquals("Message for empty name should be different", "Hello, my friend!", result);
     }
+
     @Test
-    public void sayHelloWithNullName(){
-        Writer writer = new Writer();
+    public void sayHelloWithNullName() {
         String name = null;
 
         String result = writer.sayHello(name);
 
         Assert.assertEquals("Hello, my friend!", result);
+    }
+
+    @Test
+    public void SayHelloWithCapitalizedNameSpecified(){
+        String name = "ANITA";
+
+        String result = writer.sayHello(name);
+
+        Assert.assertEquals("HELLO, ANITA!", result);
     }
 }
