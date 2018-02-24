@@ -24,8 +24,13 @@ public class CalcServiceSteps {
     }
 
     @And("^I pass null text value$")
-    public void I_pass_null_text_value(){
+    public void I_pass_null_text_value() {
         text = null;
+    }
+
+    @And("^I pass blank text value$")
+    public void I_pass_blank_text_value() {
+        text = "";
     }
 
     @When("^I execute calculate method$")
@@ -39,7 +44,7 @@ public class CalcServiceSteps {
     }
 
     @Then("^I get 0 as a result$")
-    public void I_get_0_as_a_result(){
-        Assert.assertEquals(0,actual);
+    public void I_get_0_as_a_result() {
+        Assert.assertEquals(0, actual);
     }
 }
