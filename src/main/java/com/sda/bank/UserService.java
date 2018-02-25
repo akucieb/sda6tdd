@@ -11,6 +11,10 @@ public class UserService {
         this.users = new ArrayList<>();
     }
 
+    public boolean isUserPresent(int userId) {
+        return users.stream().anyMatch(e -> userId == e.getId());
+    }
+
     public boolean addUser(User user) {
         boolean result = false;
         if (user != null) {
@@ -21,7 +25,7 @@ public class UserService {
         return result;
     }
 
-    public int getNumberOfUsers(){
+    public int getNumberOfUsers() {
         return users.size();
     }
 }

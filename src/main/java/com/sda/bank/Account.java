@@ -3,6 +3,7 @@ package com.sda.bank;
 public class Account {
     private int userId;
     private int amount;
+    private int id;
 
     public Account() {
     }
@@ -10,6 +11,10 @@ public class Account {
     public Account(int userId, int amount) {
         this.userId = userId;
         this.amount = amount;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public long getUserId() {
@@ -26,5 +31,9 @@ public class Account {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
