@@ -17,7 +17,6 @@ public class Bank {
         if (userService.isUserPresent(userId)) {
             result = accountService.addAccount(account);
         }
-
         return result;
     }
 
