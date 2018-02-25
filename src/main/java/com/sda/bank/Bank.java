@@ -20,6 +20,19 @@ public class Bank {
         return result;
     }
 
+    public boolean changeAmount(Account account, int amount) {
+        boolean result = false;
+        if(accountService.isAccountPresent(account.getId())){
+            account.setAmount(account.getAmount()+amount);
+            result = true;
+        }
+        return result;
+    }
+
+    public Account getAccount(int accoundId){
+        return accountService.getAccount(accoundId);
+    }
+
     public int getNumberOfAccounts() {
         return accountService.getNumberOfAccounts();
     }

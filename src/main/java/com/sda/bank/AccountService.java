@@ -25,4 +25,12 @@ public class AccountService {
         }
         return result;
     }
+
+    public Account getAccount(int accoundId) {
+        throw new UnsupportedOperationException();
+    }
+
+    public boolean isAccountPresent(int id) {
+        throw new UnsupportedOperationException();
+    }
 }
